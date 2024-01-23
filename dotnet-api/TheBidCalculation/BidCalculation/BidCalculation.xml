@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>BidCalculation</name>
+    </assembly>
+    <members>
+        <member name="T:BidCalculation.Controllers.CalculateBidController">
+            <summary>
+            Handles the bid calculation requests
+            </summary>
+        </member>
+        <member name="M:BidCalculation.Controllers.CalculateBidController.#ctor(BidCalculation.Domain.Services.Interfaces.IBidCalculator)">
+            <inheritdoc/>
+        </member>
+        <member name="M:BidCalculation.Controllers.CalculateBidController.Post(BidCalculation.DTOs.BidCalculation.BidCalculationRequest)">
+            <summary>
+            Calculates the bid parameters based on provided inputs
+            </summary>
+            <param name="request">Request paramteres</param>
+            <returns>Returns calculated bid parameters</returns>
+        </member>
+        <member name="T:BidCalculation.Common.BaseResponse">
+            <summary>
+            Response model
+            </summary>
+        </member>
+        <member name="P:BidCalculation.Common.BaseResponse.Message">
+            <summary>
+            Shows the error message if request failed to execute
+            </summary>
+        </member>
+    </members>
+</doc>
