@@ -1,3 +1,4 @@
+// It's used to serves as the root component, providing the main structure and behavior for the entire application.
 import { Component } from '@angular/core';
 
 @Component({

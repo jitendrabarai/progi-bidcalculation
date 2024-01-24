@@ -1,3 +1,4 @@
+//defines a custom pipe for formatting numeric values, controlling the display of decimal places based on the value's nature (decimal or integer)
 import { Pipe, PipeTransform } from '@angular/core';
 
 @Pipe({

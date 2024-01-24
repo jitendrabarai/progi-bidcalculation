@@ -1,3 +1,4 @@
+//used to define and configure the routing structure for the application.
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { FormdetailsComponent } from './pages/formdetails/formdetails.component';

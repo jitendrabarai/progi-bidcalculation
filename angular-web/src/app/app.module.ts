@@ -1,3 +1,4 @@
+// It's used to serves as the root module that defines and configures the application's components, services, and dependencies.
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 

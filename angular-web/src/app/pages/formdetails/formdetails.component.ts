@@ -1,3 +1,4 @@
+// It's used to serves as the root component, providing the structure and behavior for the entire application.
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ApiService } from 'src/app/services/api.service';
