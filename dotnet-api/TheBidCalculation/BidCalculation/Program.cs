@@ -10,7 +10,7 @@ builder.Services.AddControllers(option => option.EnableEndpointRouting = false);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSingleton<IBidCalculator, BidCalculator>();
-
+builder.Services.AddCors();
 
 //That will make it so that if 'the ModelState is invalid it won't automatically return a 400 error.
 builder.Services.Configure<ApiBehaviorOptions>(opt =>
@@ -40,5 +40,5 @@ app.UseSwaggerUI(options =>
 
 app.UseHttpsRedirection();
 app.MapControllers();
-
+app.UseCors(options => options.AllowAnyOrigin().AllowAnyHeader().AllowAnyMethod());
 app.Run();
