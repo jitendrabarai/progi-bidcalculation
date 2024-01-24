@@ -1,0 +1,17 @@
+.formdetails{
+    // background-color: lightgray;
+    border: 2px solid lightgray;
+    border-radius: 10px;
+    // padding: 3px;
+}
+hr.vertical {
+    height:100%; /* you might need some positioning for this to work, see other questions about 100% height */
+    width:0;
+    border:1px solid black;
+}
+.errortext{
+    color:red;
+}
+.top-border{
+    border-top: 1px solid #000;
+}

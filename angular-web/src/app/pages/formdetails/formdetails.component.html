@@ -1,0 +1,75 @@
+<div class="container mt-5">
+    <!-- Main Heading -->
+    <h4>Progi - Bid Calculator</h4>
+
+    <!-- Form Section -->
+    <div class="formdetails col-lg-12 col-md-12">
+        <div class="row">
+            <!-- Left Column: Form -->
+            <div class="col-lg-6 col-md-6">
+                <form [formGroup]="calculationfrm">
+                    <!-- Vehicle Base Price Input -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="m-4 row">
+                            <label class="form-label">Vehicle Base Price<span class="errortext ms-1">*</span></label>
+                            <input type="text" class="form-control" placeholder="Enter Vehicle Base Price" formControlName="vehicleBasePrice" [ngClass]="{'is-invalid': isSubmitted && f.vehicleBasePrice.errors}" onkeypress="return (event.charCode == 46 || (event.charCode >= 48 && event.charCode <= 57))" (change)="getCalculationResponse()">
+                            <!-- Error message for required validation -->
+                            <div *ngIf="isSubmitted && f.vehicleBasePrice.errors" class="invalid-feedback">
+                                <div *ngIf="f.vehicleBasePrice.errors.required">Please enter Vehicle Base Price</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Vehicle Type Dropdown -->
+                    <div class="col-lg-6 col-md-6">
+                        <div class="m-4">
+                            <label class="form-label">Vehicle Type<span class="errortext ms-1">*</span></label>
+                            <select id="Type-id" name="Vehicle-type" class="form-select" formControlName="vehicleType" [ngClass]="{'is-invalid': isSubmitted && f.vehicleType.errors}" (change)="getCalculationResponse()">
+                                <option value='0'>Common</option>
+                                <option value='1'>Luxury</option>
+                            </select>
+                        </div>
+                    </div>
+                </form>
+            </div>
+             <!-- Right Column: Calculation Results -->
+             <div class="col-lg-6 col-md-6">
+                <div class="m-4" *ngIf="calculationresp">
+                    <!-- Display Calculation Results in a Table -->
+                            <table border="0">
+                                <tr>
+                                    <th>Vehicle Base Price</th>
+                                    <td>&nbsp; : &nbsp;</td>
+                                    <td align="right">${{calculationresp.vehicleBasePrice | decimalFormat }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Basic Fees</th>
+                                    <td>&nbsp; : &nbsp;</td>
+                                    <td align="right">${{calculationresp.basicFees | decimalFormat }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Special Fees</th>
+                                    <td>&nbsp; : &nbsp;</td>
+                                    <td align="right">${{calculationresp.specialFees | decimalFormat }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Association Fees</th>
+                                    <td>&nbsp; : &nbsp;</td>
+                                    <td align="right">${{calculationresp.associationFees | decimalFormat  }}</td>
+                                </tr>
+                                <tr>
+                                    <th>Storage Fees</th>
+                                    <td>&nbsp; : &nbsp;</td>
+                                    <td align="right">${{calculationresp.storageFees | decimalFormat }}</td>
+                                </tr>
+                                <tr class="top-border">
+                                    <th>Total</th>
+                                    <td>&nbsp; : &nbsp;</td>
+                                    <td align="right">${{calculationresp.total | decimalFormat }}</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+         </div>
+    </div>
