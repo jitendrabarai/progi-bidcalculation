@@ -8,8 +8,12 @@
             <summary>
             Handles the bid calculation requests
             </summary>
+            <inheritdoc/>
         </member>
         <member name="M:BidCalculation.Controllers.CalculateBidController.#ctor(BidCalculation.Domain.Services.Interfaces.IBidCalculator)">
+            <summary>
+            Handles the bid calculation requests
+            </summary>
             <inheritdoc/>
         </member>
         <member name="M:BidCalculation.Controllers.CalculateBidController.Post(BidCalculation.DTOs.BidCalculation.BidCalculationRequest)">

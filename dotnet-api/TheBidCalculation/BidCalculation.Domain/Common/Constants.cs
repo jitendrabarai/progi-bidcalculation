@@ -9,8 +9,8 @@
 
         public const int CommonVehicleBasicsFeeMin = 10;
         public const int CommonVehicleBasicsFeeMax = 50;
-        
-        
+
+
         public const int LuxuryVehicleBasicsFeeMin = 25;
         public const int LuxuryVehicleBasicsFeeMax = 200;
 

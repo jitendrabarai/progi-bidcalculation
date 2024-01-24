@@ -1,5 +1,4 @@
 ﻿using BidCalculation.DTOs.BidCalculation;
-using static BidCalculation.Common.Enums;
 
 namespace BidCalculation.Domain.Services.Interfaces
 {

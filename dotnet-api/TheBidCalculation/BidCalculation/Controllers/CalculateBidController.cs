@@ -8,16 +8,12 @@ namespace BidCalculation.Controllers
     /// <summary>
     /// Handles the bid calculation requests
     /// </summary>
+    /// <inheritdoc/>
     [Route("[controller]")]
     [ApiController]
-    public class CalculateBidController : ControllerBase
+    public class CalculateBidController(IBidCalculator bidCalculator) : ControllerBase
     {
-        private readonly IBidCalculator _bidCalculator;
-        /// <inheritdoc/>
-        public CalculateBidController(IBidCalculator bidCalculator)
-        {
-            _bidCalculator = bidCalculator;
-        }
+        private readonly IBidCalculator _bidCalculator = bidCalculator;
 
         // GET: CalculateBidController
         /// <summary>
@@ -31,7 +27,7 @@ namespace BidCalculation.Controllers
         [ProducesResponseType(StatusCodes.Status400BadRequest, Type = typeof(BaseResponse))]
         public IActionResult Post(BidCalculationRequest request)
         {
-            if (ModelState.IsValid)
+            if (ModelState.IsValid && request.VehicleBasePrice > 0)
             {
                 var response = _bidCalculator.CalculateBid(request);
                 return Ok(response);
