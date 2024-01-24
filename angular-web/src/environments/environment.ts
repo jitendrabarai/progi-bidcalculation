@@ -1,3 +1,3 @@
 export const environment = {
-    apiUrl:'http://Dvrc.alliancetek.net/'
+    apiUrl:'http://progi.alliancetek.net/'
 };
